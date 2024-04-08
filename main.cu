@@ -1,8 +1,8 @@
 #include <iostream>
 #include <argparse/argparse.hpp>
 
-#include "src/graph/graph.h"
-#include "src/tc/tc.cuh"
+#include "graph/graph.h"
+#include "tc/tc.cuh"
 
 
 int main(int argc, char* argv[]) {

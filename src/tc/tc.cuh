@@ -6,7 +6,7 @@
 #ifndef TC_TC_CUH
 #define TC_TC_CUH
 
-#include "../graph/graph.h"
+#include "graph/graph.h"
 
 auto tc(Graph* g) -> void;
 

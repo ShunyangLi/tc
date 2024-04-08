@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.8)
 set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -Xptxas -dlcm=ca")
 # set nvcc path and architecture
 set(CMAKE_CUDA_COMPILER /usr/local/cuda/bin/nvcc)
-set(CMAKE_CUDA_ARCHITECTURES 75)
+set(CMAKE_CUDA_ARCHITECTURES 86)
 
 project(tc LANGUAGES CUDA CXX)
 
@@ -23,6 +23,9 @@ FetchContent_Declare(
         GIT_REPOSITORY https://github.com/p-ranav/argparse.git
 )
 FetchContent_MakeAvailable(argparse)
+
+# Add the source directory
+include_directories(${CMAKE_CURRENT_LIST_DIR}/src)
 
 add_subdirectory(src)
 
