@@ -4,8 +4,7 @@
 ```bash
 mkdir build
 cd build
-cmake ..
-make
+cmake -DCMAKE_BUILD_TYPE=Release .. && cmake --build . && make
 cd ..
 ```
 
