@@ -23,6 +23,13 @@ FetchContent_Declare(
         GIT_REPOSITORY https://github.com/p-ranav/argparse.git
 )
 FetchContent_MakeAvailable(argparse)
+include(FetchContent)
+FetchContent_Declare(loguru
+        GIT_REPOSITORY "https://github.com/emilk/loguru" # can be a filesystem path
+        GIT_TAG        "master"
+)
+# set any loguru compile-time flags before calling MakeAvailable()
+FetchContent_MakeAvailable(loguru)
 
 # Add the source directory
 include_directories(${CMAKE_CURRENT_LIST_DIR}/src)
@@ -31,7 +38,7 @@ add_subdirectory(src)
 
 add_executable(tc main.cu)
 
-target_link_libraries(tc src argparse)
+target_link_libraries(tc PRIVATE  src argparse loguru::loguru)
 
 set_target_properties(tc PROPERTIES
         CUDA_SEPARABLE_COMPILATION ON

@@ -4,8 +4,14 @@
 #include "graph/graph.h"
 #include "tc/tc.cuh"
 
+#include <loguru.hpp>
+//#define LOGURU_WITH_STREAMS 1
+
 
 int main(int argc, char* argv[]) {
+    loguru::init(argc, argv);
+    LOG_F(INFO, "Hello from main.cpp!");
+    LOG_F(INFO, "main function about to end!");
 
     argparse::ArgumentParser parser("triangle counting");
 
